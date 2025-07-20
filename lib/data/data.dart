@@ -27,7 +27,7 @@ class Category {
 
 class Data {
   static List<Category> categories = [
-    // Flutter category (already had 3 levels)
+    // Flutter category
     Category(
       name: "Flutter",
       image: "assets/images/img_2.png",
@@ -140,7 +140,7 @@ class Data {
       ],
     ),
 
-    // Python category (added Intermediate)
+    // Python category
     Category(
       name: "Python",
       image: "assets/images/img_3.png",
@@ -253,7 +253,7 @@ class Data {
       ],
     ),
 
-    // React category (added Intermediate and Advanced)
+    // React category
     Category(
       name: "React",
       image: "assets/images/img_4.png",
@@ -366,7 +366,7 @@ class Data {
       ],
     ),
 
-    // C++ category (added Intermediate)
+    // C++ category
     Category(
       name: "C++",
       image: "assets/images/img_1.png",
