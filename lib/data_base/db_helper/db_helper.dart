@@ -2,6 +2,9 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../../models/bookmark/bookmark.dart';
+import '../../models/quiz_result/quiz_result.dart';
+
 class DatabaseHelper {
   static final DatabaseHelper _instance = DatabaseHelper._internal();
   static Database? _database;
@@ -59,7 +62,7 @@ class DatabaseHelper {
       orderBy: 'date_taken DESC',
     );
     return List.generate(maps.length, (i) {
-      return QuizResult.formMap(maps[i]);
+      return QuizResult.fromMap(maps[i]);
     });
   }
 
@@ -69,7 +72,7 @@ class DatabaseHelper {
     final db = await database;
     return await db.insert('bookmarks', bookmark.toMap());
   }
-  Future<List<Bookmark>>getBookmarks()async{
+  Future<List<Bookmark>> getBookmarks()async{
     final db=await database;
     final List<Map<String,dynamic>>maps=await db.query('bookmarks');
     return List.generate(maps.length,(i){

@@ -3,6 +3,7 @@ import 'package:quiz_app/data_base/db_helper/db_helper.dart';
 
 
 import '../data/data.dart';
+import '../models/quiz_result/quiz_result.dart';
 import '../result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
