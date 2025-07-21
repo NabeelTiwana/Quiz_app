@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/data_base/db_helper/db_helper.dart';
+
 
 import '../data/data.dart';
 import '../result_screen.dart';
@@ -154,6 +156,15 @@ class _QuizScreenState extends State<QuizScreen> {
                               totalCorrect++;
                             }
                           }
+                         //Create a QuizResult object
+                          final result=QuizResult(
+                            quizName:widget.quizSet.name,
+                            categoryName:widget.quizSet.name,
+                            score:totalCorrect,
+                            totalQuestions:widget.quizSet.questions.length,
+                            dateTaken:DateTime.now(),
+                          );
+                          DatabaseHelper().insertQuizResult(result);
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
